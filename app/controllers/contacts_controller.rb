@@ -1,3 +1,4 @@
+# coding: utf-8
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
@@ -7,7 +8,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
 
     if @contact.save
-      flash[:notice] = "Your contact was successfully created."
+      flash[:notice] = "Ваш контакт успешно создан!"
       redirect_to contacts_path
     else
       render :new
@@ -21,7 +22,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update_attributes(params[:contact])
-      flash[:notice] = "Your contact was successfully updated."
+      flash[:notice] = "Ваш контакт успешно изменен!"
       redirect_to contacts_path
     else
       render :edit
@@ -31,7 +32,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    flash[:notice] = "Your contact was successfully deleted."
+    flash[:notice] = "Ваш контакт успешно удален!"
     redirect_to contacts_path
   end
 
