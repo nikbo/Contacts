@@ -1,3 +1,6 @@
+body{
+    font-family: "Lucida Grande";
+}
 .title-table1, .title-table2, .title-table3{
     font-weight: bold;
     font-style: italic;
@@ -49,7 +52,42 @@ h2{
 .main-link{
     display: block;
     background: url("button.png");
-    width: 95px;
-    height: 32px;
+    width: 109px;
+    height: 46px;
     margin-bottom: 30px;
+    transform: scale3d(0.9,0.9,0.9);
+    -webkit-transform: scale3d(0.9,0.9,0.9);
+    -ms-transform: scale3d(0.9,0.9,0.9);
+    -moz-transform: scale3d(0.9,0.9,0.9);
+    -o-transform: scale3d(0.9,0.9,0.9);
+    transition: 0.1s;
+    -o-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -ms-transition: 0.1s;
+}
+
+.main-link:hover{
+    transform: scale3d(1,1,1);
+    -webkit-transform: scale3d(1,1,1);
+    -ms-transform: scale3d(1,1,1);
+    -moz-transform: scale3d(1,1,1);
+    -o-transform: scale3d(1,1,1);
+
+
+}
+h1{
+    text-shadow: 3px 3px 3px #59b4f1;
+    font-family: "Bitstream Vera Sans Mono", arial;
+}
+
+.table-r{
+    transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+}
+.table-r:hover{
+    background-color: rgba(211, 211, 172, 0.43);
 }
