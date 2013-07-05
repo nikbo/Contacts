@@ -10,12 +10,12 @@
 <% end %>
 
 <%= form_for @contact do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+    <%= f.label "Имя" %>
+    <%= f.text_field :name, :class => 'text-field' %>
+    <%= f.label "Телефон" %>
+    <%= f.text_field :phone, :class => 'text-field' %>
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => 'text-field' %>
     <div class="form-actions">
       <%= f.submit :class => 'btn btn-primary' %>
     </div>
