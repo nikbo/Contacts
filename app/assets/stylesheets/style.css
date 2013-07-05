@@ -45,3 +45,11 @@ body{
 h2{
     font-style: italic;
 }
+
+.main-link{
+    display: block;
+    background: url("button.png");
+    width: 95px;
+    height: 32px;
+    margin-bottom: 30px;
+}
