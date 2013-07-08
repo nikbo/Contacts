@@ -6,7 +6,7 @@
 <h2>Персональная телефонная (и email) книга.</h2>
 
 <table class="table">
-  <tr>
+  <tr class="table-up">
     <td class="title-table1">Имя</td>
     <td class="title-table2">Телефон</td>
     <td class="title-table3">Email</td>
@@ -18,8 +18,8 @@
         <td><p><%= contact.name %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.email %></td>
-        <td><%= link_to 'Изменить', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Удалить', contact, :method => :delete, :data => { :confirm => 'Вы уверены?' } %></td>
+        <td><%= link_to '', edit_contact_path(contact), :class => 'ch-del1' %></td>
+        <td><%= link_to '', contact, :class => 'ch-del2', :method => :delete, :data => { :confirm => 'Вы уверены?' } %></td>
       </tr>
   <% end %>
 </table>

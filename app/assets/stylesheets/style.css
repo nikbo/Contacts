@@ -9,11 +9,13 @@ body{
 .label-auto{
     float: left;
     margin-left: 20px;
+    font-style: oblique;
+    font-weight: bold;
 }
 
 .text-field{
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .form-actions{
@@ -90,4 +92,29 @@ h1{
 }
 .table-r:hover{
     background-color: rgba(211, 211, 172, 0.43);
+}
+
+.ch-del1, .ch-del2{
+    font-style: italic;
+    width: 25px;
+    height: 25px;
+}
+
+.ch-del2:hover{
+    color: red;
+}
+
+.ch-del1{
+    display: block;
+    background: url("ch.png");
+}
+
+.ch-del2{
+    display: block;
+    background: url("del.png");
+}
+
+.table-up td{
+    background: url("table.png") repeat-x;
+    border-top: none;
 }
