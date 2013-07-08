@@ -7,13 +7,13 @@
 
 <table class="table">
   <tr class="table-up">
-    <td class="title-table1">Имя</td>
+    <td class="title-table1">Имя(<%= @contacts.count %>)</td>
     <td class="title-table2">Телефон</td>
     <td class="title-table3">Email</td>
     <td></td>
     <td></td>
   </tr>
-  <% @contacts.each do |contact| %>
+  <% @contacts_sorted.each do |contact| %>
       <tr class="table-r" id="tbl">
         <td><p><%= contact.name %></td>
         <td><%= contact.phone %></td>
@@ -23,5 +23,4 @@
       </tr>
   <% end %>
 </table>
-
 <p><%= link_to 'Добавить контакт', new_contact_path, :class => 'btn btn-primary' %></p>

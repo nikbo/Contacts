@@ -38,5 +38,19 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.all
+    p=[]
+    @contacts_sorted=[]
+    @contacts.each do |contact|
+         p<<contact.name
+    end
+    p.sort!
+    p.each do |pi|
+         @contacts.each do |contact|
+           if contact.name == pi
+             @contacts_sorted<<contact
+             break
+           end
+         end
+    end
   end
 end
