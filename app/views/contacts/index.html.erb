@@ -14,12 +14,12 @@
     <td></td>
   </tr>
   <% @contacts.each do |contact| %>
-      <tr class="table-r">
+      <tr class="table-r" id="tbl">
         <td><p><%= contact.name %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.email %></td>
-        <td><%= link_to '', edit_contact_path(contact), :class => 'ch-del1' %></td>
-        <td><%= link_to '', contact, :class => 'ch-del2', :method => :delete, :data => { :confirm => 'Вы уверены?' } %></td>
+        <td><%= link_to '', edit_contact_path(contact), :title => 'Редактировать', :class => 'ch-del1' %></td>
+        <td><%= link_to '', contact, :class => 'ch-del2', :title => 'Удалить', :method => :delete, :data => { :confirm => 'Вы уверены?' } %></td>
       </tr>
   <% end %>
 </table>
