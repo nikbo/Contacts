@@ -170,3 +170,15 @@ h1{
     border-top: none;
 }
 
+.modal-footer{
+    width: 940px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+    font-size: small;
+}
+
+.modal-footer p{
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
