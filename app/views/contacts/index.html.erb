@@ -1,26 +1,28 @@
 
 <% provide :title, 'Главная' %>
-
 <h1>Контакты</h1>
 
 <h2>Персональная телефонная (и email) книга.</h2>
 
 <table class="table">
   <tr class="table-up">
-    <td class="title-table1">Имя(<%= @contacts.count %>)</td>
+    <td class="title-table1">Имя(<%= @contact.count %>)</td>
     <td class="title-table2">Телефон</td>
     <td class="title-table3">Email</td>
     <td></td>
     <td></td>
   </tr>
-  <% @contacts_sorted.each do |contact| %>
-      <tr class="table-r" id="tbl">
+  <% @contacts.each do |contact| %>
+      <tr class="table-r" id="tbl-<%= contact.id %>" onclick="select(this);">
         <td><p><%= contact.name %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.email %></td>
         <td><%= link_to '', edit_contact_path(contact), :title => 'Редактировать', :class => 'ch-del1' %></td>
-        <td><%= link_to '', contact, :class => 'ch-del2', :title => 'Удалить', :method => :delete, :data => { :confirm => 'Вы уверены?' } %></td>
+        <td><%= link_to '', contact, :class => 'ch-del2', :title => 'Удалить', :method => :delete, :remote => true, :data => { :confirm => 'Вы уверены?' } %></td>
       </tr>
   <% end %>
 </table>
 <p><%= link_to 'Добавить контакт', new_contact_path, :class => 'btn btn-primary' %></p>
+
+
+

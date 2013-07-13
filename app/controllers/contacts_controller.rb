@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
     else
       render :new
     end
+
   end
 
   def edit
@@ -32,25 +33,24 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    flash[:notice] = "Ваш контакт успешно удален!"
-    redirect_to contacts_path
+    flash[:notice] = "Ваш контакт успешно удален"
+    respond_to do |format|
+    format.html { redirect_to contacts_path}
+    format.js
+    end
   end
 
   def index
-    @contacts = Contact.all
-    p=[]
-    @contacts_sorted=[]
-    @contacts.each do |contact|
-         p<<contact.name
-    end
-    p.sort!
-    p.each do |pi|
-         @contacts.each do |contact|
-           if contact.name == pi
-             @contacts_sorted<<contact
-             break
-           end
-         end
+    @contact = Contact.order(:name)
+    @contacts = @contact[0..7]
+  end
+
+  def time
+    #render :text => "The current time is #{Time.now.to_s}"
+    respond_to do |format|
+      format.html { redirect_to :index }
+      format.js # рендрит и исполняет в браузере time.js.erb
     end
   end
+
 end

@@ -1,0 +1,3 @@
+$("#tbl-<%= @contact.id %>").remove();
+$.jGrowl("<%= escape_javascript(flash[:notice])%>");
+

@@ -105,9 +105,9 @@ h1{
     -webkit-transition: background-color 0.5s;
     -ms-transition: background-color 0.5s;
 }
-#tbl:hover{
-    background-color: rgba(211, 211, 172, 0.43);
-}
+[id*=tbl][id*=tbl][id^=tbl]:hover{
+     background-color: rgba(211, 211, 172, 0.43);
+ }
 
 .ch-del1, .ch-del2{
     font-style: italic;
@@ -182,3 +182,6 @@ h1{
     font-style: italic;
 }
 
+#click-off{
+
+}
