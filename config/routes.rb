@@ -1,6 +1,7 @@
 Contacts::Application.routes.draw do
 
   root :to => 'contacts#index'
+  get 'contacts/time', :to => 'contacts#time', :as => :contacts_time
   resources :contacts
 
 

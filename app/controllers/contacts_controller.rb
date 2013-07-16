@@ -41,16 +41,34 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contact = Contact.order(:name)
-    @contacts = @contact[0..7]
+    @contacts = Contact.order(:name)
+    @contact = @contacts[0..7]
   end
 
   def time
-    #render :text => "The current time is #{Time.now.to_s}"
-    respond_to do |format|
-      format.html { redirect_to :index }
-      format.js # рендрит и исполняет в браузере time.js.erb
+    @cont=params[:t].to_i
+    @contacts = Contact.order(:name)
+    @i=0
+    @contacts.each do |contact|
+
+       if contact.id == @cont
+      break
+       end
+       @i+=1
     end
+    if @contacts[@i+1..@i+8].length == 8
+    @contact=@contacts[@i+1..@i+8]
+    else
+      @contact=@contacts[@i+1..@i+1+@contacts[@i+1..@i+8].length]
+      end
+
+    respond_to do |format|
+        format.html { redirect_to contacts_path }
+        format.js
+
+    end
+
   end
+
 
 end

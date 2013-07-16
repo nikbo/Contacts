@@ -1,0 +1,19 @@
+<tr class="table-r" id="tbl-<%= contact.id %>" onclick="select(this);">
+     <td><p><%= contact.name %></td>
+     <td><%= contact.phone %></td>
+     <td><%= contact.email %></td>
+     <td><%= link_to '', edit_contact_path(contact), :title => 'Редактировать', :class => 'ch-del1' %></td>
+     <td><%= link_to '', contact, :class => 'ch-del2', :title => 'Удалить', :method => :delete, :remote => true, :data => { :confirm => 'Вы уверены?' } %></td>
+     <% @t=contact %>
+   </tr>
+
+<% if @t == @contact.last %>
+    <% if @t == @contacts.last %>
+
+        <% else %>
+    <tr class="links">
+    <td class="links"><%= link_to 'Загрузить еще контакты', contacts_time_path(t: @t), :remote => true %></td>
+    </tr>
+        <% end %>
+<% end %>
+

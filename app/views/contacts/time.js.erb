@@ -1,1 +1,4 @@
-$('#time_div').html('<p><%= escape_javascript( render :text => "The current time is #{Time.now.to_s}") %></p>');
+$('.links').remove();
+$('#tab').append("<%=j render @contact %>");
+
+
