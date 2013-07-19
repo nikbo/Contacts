@@ -12,7 +12,7 @@
 
         <% else %>
     <tr class="links">
-    <td class="links"><%= link_to 'Загрузить еще контакты', contacts_time_path(t: @t), :remote => true %></td>
+    <td><%= link_to 'Загрузить еще контакты',  contacts_time_path(t: @t), :class => 'link', :remote => true %></td>
     </tr>
         <% end %>
 <% end %>

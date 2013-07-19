@@ -16,3 +16,16 @@ function select(form){
 
 }
 
+var links = [];
+
+function hover() {
+    links = document.getElementsByClassName("link");
+    for (var i = 0; i<links.length; i++)
+    links[i].click();
+}
+
+function resize() {
+    document.getElementById("hover-block").style.width = document.body.clientWidth + "px";
+    document.getElementById("hover-block").style.height = document.getElementsByClassName("container")[0].clientHeight*0.5 + "px";
+    document.getElementById("hover-block").style.top = document.getElementsByClassName("container")[0].clientHeight*0.5 + "px";
+}

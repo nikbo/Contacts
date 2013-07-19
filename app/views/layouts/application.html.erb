@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/assets/favicon.ico">
 </head>
-<body>
+<body onload="resize();" onresize="resize();">
 <div class="container" id="cont">
   <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
@@ -23,6 +23,7 @@
   <p>Работает на <a href="http://www.rubyonrails.ru/">Ruby on Rails</a></p>
   <p><a href="http://vk.com/nikita_bobrik">Никита Бобрик</a></p>
 </div>
+<div id="hover-block" onmouseover="hover();"></div>
 </body>
 <script src="assets/queryeffects.js" type="text/javascript"></script>
 </html>

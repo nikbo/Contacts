@@ -189,3 +189,9 @@ h1{
 .links{
     display: block;
 }
+
+#hover-block{
+    width: 1200px;
+    height: 100px;
+    position: absolute;
+}

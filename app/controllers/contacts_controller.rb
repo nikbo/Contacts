@@ -42,7 +42,11 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.order(:name)
-    @contact = @contacts[0..7]
+    if @contacts.length <= 30
+      @contact = @contacts
+    else
+      @contact = @contacts[0..29]
+    end
   end
 
   def time
@@ -56,10 +60,10 @@ class ContactsController < ApplicationController
        end
        @i+=1
     end
-    if @contacts[@i+1..@i+8].length == 8
-    @contact=@contacts[@i+1..@i+8]
+    if @contacts[@i+1..@i+30].length == 30
+    @contact=@contacts[@i+1..@i+30]
     else
-      @contact=@contacts[@i+1..@i+1+@contacts[@i+1..@i+8].length]
+      @contact=@contacts[@i+1..@i+1+@contacts[@i+1..@i+30].length]
       end
 
     respond_to do |format|
