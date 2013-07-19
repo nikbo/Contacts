@@ -19,13 +19,30 @@ function select(form){
 var links = [];
 
 function hover() {
+    var elem = document.getElementsByClassName("table-r");
+    for (var i=elem.length-1; i>elem.length-15; i--)
+        elem[i].onmouseover = hover1;
     links = document.getElementsByClassName("link");
-    for (var i = 0; i<links.length; i++)
+    for (var i=0; i<links.length; i++)
     links[i].click();
 }
 
-function resize() {
-    document.getElementById("hover-block").style.width = document.body.clientWidth + "px";
-    document.getElementById("hover-block").style.height = document.getElementsByClassName("container")[0].clientHeight*0.5 + "px";
-    document.getElementById("hover-block").style.top = document.getElementsByClassName("container")[0].clientHeight*0.5 + "px";
+
+function hover1() {
+
+}
+
+
+function load(){
+    var elem = document.getElementsByClassName("table-r");
+    for (var i=elem.length-1; i>elem.length-5; i--){
+    elem[i].onmouseover = hover;
+    elem[i].onmousedown = hover1;
+    }
+}
+
+function reset(){
+    var elem = document.getElementsByClassName("table-r");
+    for (var i=elem.length-1; i>elem.length-5; i--)
+        elem[i].onmouseover = hover1;
 }
