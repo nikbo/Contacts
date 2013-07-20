@@ -10,15 +10,12 @@
     </div>
 <% end %>
 
-<%= form_for @contact do |f| %>
-    <%= f.label "Имя", :class => 'label-auto' %>
-    <%= f.text_field :name, :class => 'text-field' %>
-    <%= f.label "Телефон", :class => 'label-auto' %>
-    <%= f.text_field :phone, :class => 'text-field' %>
-    <%= f.label :email, :class => 'label-auto' %>
-    <%= f.text_field :email, :class => 'text-field' %>
+<%= form_for @contact, :html => {:class => 'form-inline'} do |f| %>
+    <%= f.text_field :name, :class => 'input-large',  :placeholder => 'Имя', :id => 'focusedInput' %>
+    <%= f.text_field :phone, :class => 'input-large',  :placeholder => 'Телефон' %>
+    <%= f.text_field :email, :class => 'input-large',  :placeholder => 'Email' %>
     <div class="clearfix"></div>
-    <div class="form-actions">
+    <div class="form">
       <%= f.submit :class => 'btn btn-primary' %>
     </div>
 <% end %>

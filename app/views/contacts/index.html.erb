@@ -1,8 +1,9 @@
 
 <% provide :title, 'Главная' %>
-<h1>Контакты</h1>
-<h2>Персональная телефонная (и email) книга.</h2>
-
+<h1 id="title">Контакты</h1>
+<%= link_to '', new_contact_path, :class => 'btn-up' %>
+<div class="clearfix"></div>
+<h2>User name is here</h2>
 <table class="table" id="tab">
   <tr class="table-up">
     <td class="title-table1">Имя(<%= @contacts.count %>)</td>

@@ -35,10 +35,24 @@ function hover1() {
 
 }
 
+function clicked () {
+    var elements = document.getElementsByClassName("table-r");
+    for(var i=0; i<elements.length; i++){
+        if (elements[i].style.backgroundColor == "rgb(185, 185, 185)")
+        elements[i].style.backgroundColor = "";
+
+    }
+}
+
+function reset_click() {
+    document.body.click = clicked;
+}
+
 
 function load(){
+    reset_click;
     var elem = document.getElementsByClassName("table-r");
-    for (var i=elem.length-1; i>elem.length-5; i--){
+    for (var i=elem.length-1; i>elem.length-15; i--){
     elem[i].onmouseover = hover;
     elem[i].onmousedown = hover1;
     }
@@ -46,6 +60,6 @@ function load(){
 
 function reset(){
     var elem = document.getElementsByClassName("table-r");
-    for (var i=elem.length-1; i>elem.length-5; i--)
+    for (var i=elem.length-1; i>elem.length-15; i--)
         elem[i].onmouseover = hover1;
 }
