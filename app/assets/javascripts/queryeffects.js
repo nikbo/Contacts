@@ -16,6 +16,10 @@ function select(form){
     }
 }
 
+function upload(){
+    document.getElementById("upload").style.display = "block";      //Анимация при подгрузке контактов
+}
+
 var links = [];
 
 function hover() {
@@ -23,8 +27,10 @@ function hover() {
     for (var i=elem.length-1; i>elem.length-15; i--)
         elem[i].onmouseover = hover1;
     links = document.getElementsByClassName("link");
-    for (var i=0; i<links.length; i++)
-    links[i].click();
+    for (var i=0; i<links.length; i++){
+        links[i].click();
+        document.getElementById("upload").style.display = "block";
+    }
 }
 
 
