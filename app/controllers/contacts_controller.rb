@@ -33,7 +33,6 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    flash[:notice] = "Ваш контакт успешно удален"
     respond_to do |format|
     format.html { redirect_to contacts_path}
     format.js

@@ -1,13 +1,10 @@
 function select(form){
     if (form.style.backgroundColor == "rgb(185, 185, 185)")
-        form.style.backgroundColor = "";
+        form.style.backgroundColor = "";                        //Обнуление цвета при повторном нажатии
     else{
     var elements = document.getElementsByClassName("table-r");
     for(var i=0; i<elements.length; i++){
-        elements[i].style.backgroundColor = "";
-    }
-    for(var i=0; i<elements.length; i++){
-        if (elements[i].style.backgroundColor ==  "rgb(185, 185, 185)"){
+        if (elements[i].style.backgroundColor ==  "rgb(185, 185, 185)"){         //Предварительное обнуление всех контактов
 
                 elements[i].style.backgroundColor = "";
 
@@ -15,7 +12,7 @@ function select(form){
 
     }
     form.style.backgroundColor = "#b9b9b9";
-}
+}                                                              //Изменение цвета при нажатии
     }
 }
 

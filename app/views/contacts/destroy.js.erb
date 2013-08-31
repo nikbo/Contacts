@@ -1,3 +1,25 @@
 $("#tbl-<%= @contact.id %>").remove();
-$.jGrowl("<%= escape_javascript(flash[:notice])%>");
+var text = $(".title-table1")[0].innerHTML;
+var a = 0;
+var b = 0;
+for (var i=0; i<text.length; i++ ) {
 
+    if (text[i] == "("){
+        a=i;
+    }
+    if (text[i] == ")"){
+        b=i;
+    }
+
+
+}
+var mas = [];
+var c = "";
+for (var i=a+1; i<b; i++){
+    c+=text[i].toString();
+}
+
+var k = parseInt(c)-1;
+$(".title-table1")[0].innerHTML = "Имя("+ k.toString() + ")";
+$("#del-mes").animate({opacity: "show"}, 1000);
+$("#del-mes").animate({opacity: "hide"}, 5000);

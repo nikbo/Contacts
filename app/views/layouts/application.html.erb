@@ -4,14 +4,20 @@
   <title>Контакты | <%= yield :title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag :defaults %>
+
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/assets/favicon.ico">
+  <script type="text/javascript">
+      $(function() {
+          $("#goTop").scrollToTop();
+      });
+  </script>
 </head>
 <body onload="load();">
+<div id="goTop">^</div>
 <div class="container" id="cont">
   <% if flash[:notice] %>
-      <div class="alert alert-info"><%= flash[:notice] %></div>
+      <div class="alert alert-info" id="hide"><%= flash[:notice] %></div>
   <% end %>
   <% if flash[:alert] %>
       <div class="alert alert-error"><%= flash[:alert] %></div>

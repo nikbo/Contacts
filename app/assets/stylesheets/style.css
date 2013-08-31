@@ -237,3 +237,30 @@ h1{
     -moz-transform: scale3d(1,1,1);
     -o-transform: scale3d(1,1,1);
 }
+
+#del-mes, #hide{
+    display: none;
+    position: fixed;
+}
+
+#goTop {
+    -webkit-transition:All 0.3s ease;
+    -moz-transition:All 0.3s ease;
+    -o-transition:All 0.3s ease;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    font-size: 40px;
+    text-decoration:none;
+    padding:50px 0;
+    width:7%;
+    height:100%;
+    position:fixed;
+    left:0;
+    text-align:center;
+    color: #858687;
+}
+
+#goTop:hover {
+    color: #535353;
+    background: #efefef;
+}
