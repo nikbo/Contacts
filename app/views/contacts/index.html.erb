@@ -1,22 +1,33 @@
-<div class="alert alert-info" id="del-mes">Ваш контакт был успешно удален</div>
-<% provide :title, 'Главная' %>
-<h1 id="title">Контакты</h1>
-<%= link_to '', new_contact_path, :class => 'btn-up' %>
-<div class="clearfix"></div>
-<h2>User name is here</h2>
-<table class="table" id="tab">
-  <tr class="table-up">
-    <td class="title-table1">Имя(<%= @contacts.count %>)</td>
-    <td class="title-table2">Телефон</td>
-    <td class="title-table3">Email</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <%= render(@contact) %>
-  <table class="table" id="add-1"></table>
-</table>
-<div id="upload"></div>
-<p><%= link_to 'Добавить контакт', new_contact_path, :class => 'btn btn-primary' %></p>
+<%if model_signed_in?%>
+    <h5>Вы вошли как:</h5>
+    <p><%= current_model.email %></p>
+    <%= link_to "Выйти", destroy_model_session_path, :method => :delete %>
+
+    <div class="alert alert-info" id="del-mes">Ваш контакт был успешно удален</div>
+    <% provide :title, 'Главная' %>
+    <h1 id="title">Контакты</h1>
+    <%= link_to '', new_contact_path, :class => 'btn-up' %>
+    <div class="clearfix"></div>
+    <h2>User name is here</h2>
+    <table class="table" id="tab">
+      <tr class="table-up">
+        <td class="title-table1">Имя(<%= @contacts.count %>)</td>
+        <td class="title-table2">Телефон</td>
+        <td class="title-table3">Email</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <%= render(@contact) %>
+      <table class="table" id="add-1"></table>
+    </table>
+    <div id="upload"></div>
+    <p><%= link_to 'Добавить контакт', new_contact_path, :class => 'btn btn-primary' %></p>
+
+
+<%else%>
+    <%= link_to "Регистрация", new_model_registration_path%>
+    <%= link_to "Войти", new_model_session_path%>
+<%end%>
 
 
 

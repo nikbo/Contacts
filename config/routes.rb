@@ -1,8 +1,14 @@
 Contacts::Application.routes.draw do
 
+  devise_for :models
+
+
   root :to => 'contacts#index'
+
   get 'contacts/time', :to => 'contacts#time', :as => :contacts_time
   resources :contacts
+
+
 
 
   # The priority is based upon order of creation:

@@ -1,11 +1,8 @@
 class CreateContacts < ActiveRecord::Migration
   def change
-    create_table :contacts do |t|
-      t.column :name, :string
-      t.column :phone, :string
-      t.column :email, :string
+    add_column :contacts, :model_id, :integer
+      t.integer :model_id
 
-      t.timestamps
-    end
+
   end
 end

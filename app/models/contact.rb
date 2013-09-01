@@ -13,5 +13,7 @@ class Contact < ActiveRecord::Base
       :minimum => 13,
       :maximum => 13,
       :message => "должен состоять из 12 цифр"}
+  belongs_to :model
+  accepts_nested_attributes_for :model
 
 end

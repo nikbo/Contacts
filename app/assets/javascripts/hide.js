@@ -1,4 +1,4 @@
 $(document).ready(function () {
-    $("#hide").animate({opacity: "show"}, 1000);
-    $("#hide").animate({opacity: "hide"}, 5000);
+    $("#hide").show("drop",{},1500);
+    $("#hide").hide("fade",{},15000);
 });
