@@ -1,14 +1,13 @@
 <%if model_signed_in?%>
-    <h5>Вы вошли как:</h5>
-    <p><%= current_model.email %></p>
-    <%= link_to "Выйти", destroy_model_session_path, :method => :delete %>
 
     <div class="alert alert-info" id="del-mes">Ваш контакт был успешно удален</div>
     <% provide :title, 'Главная' %>
     <h1 id="title">Контакты</h1>
     <%= link_to '', new_contact_path, :class => 'btn-up' %>
     <div class="clearfix"></div>
-    <h2>User name is here</h2>
+    <div id="user-info"><%= current_model.email %></div>
+    <%= link_to "Выйти", destroy_model_session_path, :class => 'btn btn-small', :method => :delete %>
+    <div class="clearfix"></div>
     <table class="table" id="tab">
       <tr class="table-up">
         <td class="title-table1">Имя(<%= @contacts.count %>)</td>
@@ -23,10 +22,19 @@
     <div id="upload"></div>
     <p><%= link_to 'Добавить контакт', new_contact_path, :class => 'btn btn-primary' %></p>
 
-
 <%else%>
-    <%= link_to "Регистрация", new_model_registration_path%>
-    <%= link_to "Войти", new_model_session_path%>
+    <% provide :title, 'Главная' %>
+    <h1 id="title">Контакты</h1>
+    <div id="header-reg"><p class="main-reg-links"><%= link_to "Регистрация", new_model_registration_path%>
+    <%= link_to "Войти", new_model_session_path%></p></div>
+    <div class="clearfix"></div>
+    <div id="title-main-des">Что это такое:</div>
+    <div id="info-main"><span>Контакты</span> - это средство для простого хранения контактных данных с простым и красивым
+    интерфейсом. Получите доступ к необходимой информации из любой точки мира, делайте резервную копию вашей телефонной
+    книги с дальнейшей возможностью быстрого и простого восстановления потерянных данных.</div>
+    <div id="main-imgs"><img src="/assets/1scr.png"> <img src="/assets/2scr.png"> </div>
+
+
 <%end%>
 
 
